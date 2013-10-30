@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hrmanifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="hrmanifest.xsd"
+   submitterId="foo"
+   transactionId="00001" 
+   reportDate="2013-05-20T13:03:00.0" 
+   recordCount="1">
+  <records>
+	  <record principalId="0001" principalName="jdoe">
+	    <affiliations>
+		    <affiliation affiliationType="affType"
+		      campus="MN"
+		      employeeStatus="ACTIVE"
+		      employeeType="APPOINTED"
+		      baseSalaryAmount="50180"
+		      primaryDepartment="MATH"
+		      employeeId="092001234"
+		      primaryEmployment="true"
+          default="true"
+          active="true"
+        />
+		  </affiliations>
+	    <addresses>
+	      <address addressType="HOME" 
+	        addressLine1="1234 E. Main St." 
+	        addressLine2="Apt. 8C" 
+	        city="Minneapolis" 
+	        stateOrProvince="MN"
+	        postalCode="34567"
+	        country="US"
+	        default="true"
+	        active="true" />
+	    </addresses>
+	    <names>
+	      <name nameCode="NAME"
+	        prefix="Mr."
+	        firstName="Jonathon"
+	        lastName="Doe"
+	        default="true"
+	        active="true" />
+	    </names>
+	    <phones>
+	      <phone phoneType="OFFICE"
+	        phoneNumber="204-391-1101"
+	        country="US"
+	        default="true"
+	        active="true" />
+	      <phone phoneType="HOME"
+	        phoneNumber="204-718-3221"
+	        country="US"
+	        active="true" />
+	    </phones>
+	    <emails>
+	      <email emailType="WORK"
+	        emailAddress="jdoe@university.edu"
+	        default="true"
+	        active="true" />
+	    </emails>
+	    <kcExtendedAttributes country="US"
+	      ageByFiscalYear="52"
+	      race="CAUCASIAN"
+	      educationLevel="PHD"
+	      degree="PHD"
+	      major="MATHEMATICS"
+	      handicapped="false"
+	      veteran="true"
+	      veteranType="A"
+	      visa="false"
+	      officeLocation="503 Carter Hall"
+	      school="MATH"
+	      yearGraduated="1983"
+	      directoryDepartment="MATH"
+	      vacationAccrual="true"
+	      idProvided="John Doe"
+	      idVerified="???"
+	      citizenshipType="1"
+	      salaryAnniversaryDate="2010-01-01"/>
+	    <degrees>
+		    <degree degree="PhD"
+		      degreeType="GRAD"
+		      graduationYear="1983"
+		      fieldOfStudy="Mathematics"
+		      specialization="non-linear algebra"
+		      school="Texas A&amp;M University"
+		      schoolId="1234"
+		      schoolIdCode="UMN" />
+	    </degrees>
+	    <appointments>
+		    <appointment unit="MATH"
+		      jobCode="0010"
+		      appointmentType="APP"
+		      salary="50180"
+		      startDate="2010-01-01"
+		      jobTitle="Professor"
+		      preferedJobTitle="Professor"/>
+	    </appointments>
+	  </record>
+  </records>
+</hrmanifest>

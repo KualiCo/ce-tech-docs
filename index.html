@@ -28,17 +28,17 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h3>
-<a name="human-resources-data-import-service" class="anchor" href="#human-resources-data-import-service"><span class="octicon octicon-link"></span></a>Human Resources Data Import Service</h3>
+          <h2>
+<a name="human-resources-data-import-service" class="anchor" href="#human-resources-data-import-service"><span class="octicon octicon-link"></span></a>Human Resources Data Import Service</h2>
 
 <ol>
 <li>HR data will be sent to Cloud Express via a REST interface (URL TBD).</li>
-<li>To import a data file, the customer will perform a multi-part file upload (HTTP POST), 
+<li>To import a data file, the customer will perform a multi-part file upload (HTTP POST),
 of an XML file to the URL: <code>/import</code>.</li>
-<li>The format of the XML file is defined by the schema: <a href="https://github.com/rSmart/CE-tech-docs/blob/master/hrmanifest.xsd">hrmanifest.xsd</a>.
-The schema will be used to validate the XML file upon upload to ensure it 
+<li>The format of the XML file is defined by the schema: <a href="hrmanifest.xsd">hrmanifest.xsd</a>.
+The schema will be used to validate the XML file upon upload to ensure it
 is a valid HR manifest.</li>
-<li>A sample HR manifest XML file is provided for reference: <a href="https://github.com/rSmart/CE-tech-docs/blob/master/exampleImport.xml">exampleImport.xml</a>.</li>
+<li>A sample HR manifest XML file is provided for reference: <a href="exampleImport.xml">exampleImport.xml</a>.</li>
 </ol>
         </section>
 

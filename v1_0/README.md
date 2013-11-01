@@ -19,6 +19,7 @@
     manifest will be disabled.
 
 ## XML Schema Versioning
+
 1.  Version numbers will be recorded using both major and minor numbers:
 
     ```
@@ -41,6 +42,12 @@
       <schema version="2.0"
         targetNamespace="https://github.com/rSmart/ce-tech-docs/tree/master/v2_0">
     ```
+
+4.  Note: Changes to the schema that would require a compatibility change, will
+    be tied to a new version of the REST API as well. We will do our best to
+    keep older versions of both the REST APIs and corresponding XML schemas
+    working as long as possible. This will help minimize any impact to the
+    customer as much as possible.
 
 [hrmanifest.xsd]:      https://github.com/rSmart/ce-tech-docs/blob/master/v1_0/hrmanifest.xsd
 [hrExampleImport.xml]: https://github.com/rSmart/ce-tech-docs/blob/master/v1_0/hrExampleImport.xml

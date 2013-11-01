@@ -16,8 +16,11 @@
           </xs:complexType>
         </xs:element>
       </xs:sequence>
+      <!-- Declare which version of the schema your data is compatible with -->
       <xs:attribute name="schemaVersion" type="xs:decimal" use="required"/>
+      <!-- The date the HR extract was created -->
       <xs:attribute name="reportDate" type="xs:dateTime" use="required"/>
+      <!-- The number of records that were exported from the HR system of record -->
       <xs:attribute name="recordCount" type="xs:int" use="required"/>
     </xs:complexType>
   </xs:element>
@@ -75,25 +78,56 @@
         </xs:complexType>
       </xs:element>
     </xs:sequence>
+    <!-- The unique ID number identifying a principal. It's the unique alphanumeric
+      number from your HR system. -->
     <xs:attribute name="principalId" type="xs:string" use="required"/>
+    <!-- The user name by which this principal is to be identified. i.e. username -->
     <xs:attribute name="principalName" type="xs:string" use="required"/>
   </xs:complexType>
 
+  <!--
+  Describes the person's default affiliation with your institution:
+    Faculty, Non-Faculty, Affiliate, Student Investigator, or Faculty Supervisor.
+
+    * A person must have at least one affiliation.
+    * Each faculty or staff affiliation must have at least one Employment
+        Information record associated with it.
+    * If a person has any faculty or staff affiliations then one Employment
+        Information record must be marked as 'primary.
+    * Each person must have a default Name record in the Contacts section.
+    * Each affiliation must be associated with a campus.
+  -->
   <xs:complexType name="AffiliationType">
+    <!-- AFLT = Affiliate; FCLTY = Faculty; GRD_STDNT_STAFF = Graduate Student Staff;
+      MED_STAFF = Medical Staff; OTH_ACADMC_GRP = Other Academic Group;
+      STAFF = Staff; STDNT = Student; SUPPRT_STAFF = Support Staff; -->
     <xs:attribute name="affiliationType" type="xs:string" use="required"/>
+    <!-- Describes the principal's primary campus -->
     <xs:attribute name="campus" type="xs:string" use="required"/>
-    <xs:attribute name="employeeStatus" type="xs:string" use="required"/>
-    <xs:attribute name="employeeType" type="xs:string" use="required"/>
+    <!-- Current status of this Faculty or Staff affiliation:
+      A = Active; D = Deceased; L = On Non-Pay Leave; N = Status Not Yet Processed;
+      P = Processing; R = Retired; S = Sabbatical Leave; T = Terminated; -->
+    <xs:attribute name="employeeStatus" type="string1Type" use="required"/>
+    <!-- Type of employment: N = Non-Professional; O = Other; P = Professional; -->
+    <xs:attribute name="employeeType" type="string1Type" use="required"/>
+    <!-- The employee's base salary -->
     <xs:attribute name="baseSalaryAmount" type="xs:float" use="required"/>
+    <!-- The employee's primary department -->
     <xs:attribute name="primaryDepartment" type="xs:string" use="required"/>
+    <!-- Employee's ID number -->
     <xs:attribute name="employeeId" type="xs:string" use="required"/>
+    <!-- Boolean to indicate that this faculty or staff affiliation represents
+          the Principal's primary job with your institution -->
     <xs:attribute name="primaryEmployment" type="xs:boolean" default="false"/>
+    <!-- Only one record can be marked as the default. -->
     <xs:attribute name="default" type="xs:boolean" default="false"/>
+    <!-- Only active records are visible in the application -->
     <xs:attribute name="active" type="xs:boolean" default="true"/>
   </xs:complexType>
 
   <xs:complexType name="AddressType">
-    <xs:attribute name="addressType" type="xs:string"/>
+    <!-- HM = Home; OTH = Other; WRK = Work -->
+    <xs:attribute name="addressType" type="string3Type"/>
     <xs:attribute name="addressLine1" type="xs:string"/>
     <xs:attribute name="addressLine2" type="xs:string"/>
     <xs:attribute name="addressLine3" type="xs:string"/>
@@ -101,33 +135,46 @@
     <xs:attribute name="stateOrProvince" type="xs:string"/>
     <xs:attribute name="postalCode" type="xs:string"/>
     <xs:attribute name="country" type="xs:string"/>
+    <!-- Only one record can be marked as the default. -->
     <xs:attribute name="default" type="xs:boolean" default="false"/>
+    <!-- Only active records are visible in the application -->
     <xs:attribute name="active" type="xs:boolean" default="true"/>
   </xs:complexType>
 
   <xs:complexType name="NameType">
-    <xs:attribute name="nameCode" type="xs:string" use="required"/>
-    <xs:attribute name="prefix" type="xs:string"/>
+    <!-- OTH = Other; PRFR = Preferred; PRM = Primary -->
+    <xs:attribute name="nameCode" type="string3Type" use="required"/>
+    <!-- Ms;Mrs;Mr;Dr -->
+    <xs:attribute name="prefix" type="string3Type"/>
     <xs:attribute name="firstName" type="xs:string" use="required"/>
     <xs:attribute name="lastName" type="xs:string" use="required"/>
-    <xs:attribute name="suffix" type="xs:string"/>
+    <!-- Jr;Sr;Mr;Md -->
+    <xs:attribute name="suffix" type="string2Type"/>
+    <!-- Only one record can be marked as the default. -->
     <xs:attribute name="default" type="xs:boolean" default="false"/>
+    <!-- Only active records are visible in the application -->
     <xs:attribute name="active" type="xs:boolean" default="true"/>
   </xs:complexType>
 
   <xs:complexType name="PhoneType">
-    <xs:attribute name="phoneType" type="xs:string"/>
+    <!-- FAX = Facsimile; HM = Home; MBL = Mobile; OTH = Other; WRK = Work -->
+    <xs:attribute name="phoneType" type="string3Type"/>
     <xs:attribute name="phoneNumber" type="xs:string"/>
     <xs:attribute name="extension" type="xs:string"/>
     <xs:attribute name="country" type="xs:string"/>
+    <!-- Only one record can be marked as the default. -->
     <xs:attribute name="default" type="xs:boolean" default="false"/>
+    <!-- Only active records are visible in the application -->
     <xs:attribute name="active" type="xs:boolean" default="true"/>
   </xs:complexType>
 
   <xs:complexType name="EmailType">
-    <xs:attribute name="emailType" type="xs:string"/>
+    <!-- HM = Home; OTH = Other; WRK = Work -->
+    <xs:attribute name="emailType" type="string3Type"/>
     <xs:attribute name="emailAddress" type="xs:string"/>
+    <!-- Only one record can be marked as the default. -->
     <xs:attribute name="default" type="xs:boolean" default="false"/>
+    <!-- Only active records are visible in the application -->
     <xs:attribute name="active" type="xs:boolean" default="true"/>
   </xs:complexType>
 
@@ -162,8 +209,65 @@
   </xs:complexType>
 
   <xs:complexType name="DegreeDataType">
-    <xs:attribute name="degree" type="xs:string"/>
+    <!-- TODO verify these valid values (mismatch from example XML) -->
+    <!--
+    +=============+===================================+
+    | DEGREE_CODE | DESCRIPTION                       |
+    +=============+===================================+
+    | AS          | Associate in Science              |
+    | BA          | Bachelor of Arts                  |
+    | BComm       | Bachelor of Commerce (Canada)     |
+    | BEd         | Bachelor of Education             |
+    | BS          | Bachelor of Science               |
+    | DA          | Doctor of Arts                    |
+    | DC          | Doctor of Chiropractics           |
+    | DD          | Doctor of Divinity                |
+    | DDS         | Doctor of Dental Science          |
+    | DEng        | Doctor of Engineering             |
+    | DFA         | Doctor of Fine Arts               |
+    | DH          | Doctor of Humanities              |
+    | DHA         | Doctor of Hospital Administration |
+    | DMin        | Doctor of Ministry                |
+    | DPA         | Doctor of Public Administration   |
+    | DSN         | Doctorate of Science, in Nursing  |
+    | DVM         | Doctor of Veterinary Medicine     |
+    | DVS         | Doctor of Veterinary Science      |
+    | HS          | High School (or GED equivalent)   |
+    | JD          | Jurum Doctor (Doctor of Laws)     |
+    | LLD         | Legum Doctor (Doctor of Laws)     |
+    | LLM         | Legum Magister (Master of Laws)   |
+    | MA          | Master of Arts                    |
+    | MAEd        | Master of Arts, in Education      |
+    | MArch       | Master of Architecture            |
+    | MBA         | Master of Business Administration |
+    | MD          | Medical Doctor                    |
+    | MDS         | Master of Medical Science         |
+    | MDiv        | Master of Divinity                |
+    | MEE         | Master of Electrical Engineering  |
+    | MEd         | Master of Education               |
+    | MEng        | Master of Engineering             |
+    | MFA         | Master of Fine Arts               |
+    | MIS         | Master of Information Systems     |
+    | MLS         | Master of Library Science         |
+    | MPA         | Master of Public Administration   |
+    | MPE         | Master of Public Education        |
+    | MPH         | Master of Public Health           |
+    | MPd         | Master of Pedagogy                |
+    | MPhil       | Master of Philosophy              |
+    | MS          | Master of Science                 |
+    | MSEd        | Master of Science, in Education   |
+    | MST         | Master of Sacred Theology         |
+    | MSW         | Master of Social Work             |
+    | MTh         | Master of Theology, in Religion   |
+    | PhD         | Doctor of Philosophy              |
+    | PharD       | Doctor of Pharmacy                |
+    | ScD         | Doctor of Science                 |
+    | ThD         | Doctor of Theology, in Religion   |
+    | UKNW        | No Degree information specified   |
+    +=============+===================================+
+    -->
     <xs:attribute name="degreeType" type="xs:string"/>
+    <xs:attribute name="degree" type="xs:string"/>
     <xs:attribute name="graduationYear" type="xs:string"/>
     <xs:attribute name="fieldOfStudy" type="xs:string"/>
     <xs:attribute name="specialization" type="xs:string"/>
@@ -173,14 +277,33 @@
   </xs:complexType>
 
   <xs:complexType name="AppointmentDataType">
+    <!-- TODO document valid values -->
+    <xs:attribute name="appointmentType" type="xs:string"/>
     <xs:attribute name="unit" type="xs:string"/>
     <xs:attribute name="jobCode" type="xs:string"/>
-    <xs:attribute name="appointmentType" type="xs:string"/>
     <xs:attribute name="salary" type="xs:float"/>
     <xs:attribute name="startDate" type="xs:date"/>
     <xs:attribute name="endDate" type="xs:date"/>
     <xs:attribute name="jobTitle" type="xs:string"/>
     <xs:attribute name="preferedJobTitle" type="xs:string"/>
   </xs:complexType>
+
+  <xs:simpleType name="string1Type">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="string2Type">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="string3Type">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
 
 </xs:schema>

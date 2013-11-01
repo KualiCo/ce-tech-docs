@@ -1,4 +1,4 @@
-## Human Resources Data Import Service
+## Human Resources Provisioning Service
 
 1.  HR data will be sent to CE via a REST interface. The URL will be
     provided by your project manager during implementation.

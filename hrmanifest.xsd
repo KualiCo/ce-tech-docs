@@ -1,201 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	elementFormDefault="qualified">
+  elementFormDefault="qualified">
 
-	<xs:element name="hrmanifest">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="records">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="record" type="RecordType" maxOccurs="unbounded"></xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-			</xs:sequence>
-			<xs:attribute name="submitterId" type="xs:string"
-				use="required"></xs:attribute>
-			<xs:attribute name="transactionId" type="xs:string"
-				use="required"></xs:attribute>
-			<xs:attribute name="reportDate" type="xs:dateTime" use="required"></xs:attribute>
-			<xs:attribute name="recordCount" type="xs:int" use="required"></xs:attribute>
-		</xs:complexType>
-	</xs:element>
+  <xs:element name="hrmanifest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="records">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="record" type="RecordType" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="submitterId" type="xs:string"
+        use="required"></xs:attribute>
+      <xs:attribute name="transactionId" type="xs:string"
+        use="required"></xs:attribute>
+      <xs:attribute name="reportDate" type="xs:dateTime" use="required"></xs:attribute>
+      <xs:attribute name="recordCount" type="xs:int" use="required"></xs:attribute>
+    </xs:complexType>
+  </xs:element>
 
-	<xs:complexType name="RecordType">
-		<xs:sequence>
-			<xs:element name="affiliations">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="affiliation" type="AffiliationType"
-							minOccurs="1" maxOccurs="1"></xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="addresses">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="address" type="AddressType"
-							minOccurs="0" maxOccurs="unbounded"></xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="names">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="name" type="NameType" minOccurs="1"
-							maxOccurs="unbounded"></xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="phones">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="phone" type="PhoneType" minOccurs="0"
-							maxOccurs="unbounded"></xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="emails">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="email" type="EmailType" minOccurs="0"
-							maxOccurs="unbounded"></xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="kcExtendedAttributes" type="KCExtendedAttributesType"
-				maxOccurs="1" minOccurs="0"></xs:element>
-			<xs:element name="degrees">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="degree" type="DegreeDataType"
-							maxOccurs="1" minOccurs="0"></xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="appointments">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="appointment" type="AppointmentDataType"
-							maxOccurs="1" minOccurs="0"></xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
-		<xs:attribute name="principalId" type="xs:string" use="required"></xs:attribute>
-		<xs:attribute name="principalName" type="xs:string"
-			use="required"></xs:attribute>
-	</xs:complexType>
+  <xs:complexType name="RecordType">
+    <xs:sequence>
+      <xs:element name="affiliations">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="affiliation" type="AffiliationType"
+              minOccurs="1" maxOccurs="1"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addresses">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="address" type="AddressType"
+              minOccurs="0" maxOccurs="unbounded"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="names">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="NameType" minOccurs="1"
+              maxOccurs="unbounded"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="phones">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="phone" type="PhoneType" minOccurs="0"
+              maxOccurs="unbounded"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="emails">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="email" type="EmailType" minOccurs="0"
+              maxOccurs="unbounded"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kcExtendedAttributes" type="KCExtendedAttributesType"
+        maxOccurs="1" minOccurs="0"></xs:element>
+      <xs:element name="degrees">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="degree" type="DegreeDataType"
+              maxOccurs="1" minOccurs="0"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="appointments">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="appointment" type="AppointmentDataType"
+              maxOccurs="1" minOccurs="0"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="principalId" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="principalName" type="xs:string"
+      use="required"></xs:attribute>
+  </xs:complexType>
 
-	<xs:complexType name="AffiliationType">
-		<xs:attribute name="affiliationType" type="xs:string"
-			use="required"></xs:attribute>
-		<xs:attribute name="campus" type="xs:string" use="required"></xs:attribute>
-		<xs:attribute name="employeeStatus" type="xs:string"
-			use="required"></xs:attribute>
-		<xs:attribute name="employeeType" type="xs:string"
-			use="required"></xs:attribute>
-		<xs:attribute name="baseSalaryAmount" type="xs:float"
-			use="required"></xs:attribute>
-		<xs:attribute name="primaryDepartment" type="xs:string"
-			use="required"></xs:attribute>
-		<xs:attribute name="employeeId" type="xs:string" use="required"></xs:attribute>
-		<xs:attribute name="primaryEmployment" type="xs:boolean"
-			default="false"></xs:attribute>
-		<xs:attribute name="active" type="xs:boolean" default="true"></xs:attribute>
-		<xs:attribute name="default" type="xs:boolean" default="false"></xs:attribute>
-	</xs:complexType>
+  <xs:complexType name="AffiliationType">
+    <xs:attribute name="affiliationType" type="xs:string"
+      use="required"></xs:attribute>
+    <xs:attribute name="campus" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="employeeStatus" type="xs:string"
+      use="required"></xs:attribute>
+    <xs:attribute name="employeeType" type="xs:string"
+      use="required"></xs:attribute>
+    <xs:attribute name="baseSalaryAmount" type="xs:float"
+      use="required"></xs:attribute>
+    <xs:attribute name="primaryDepartment" type="xs:string"
+      use="required"></xs:attribute>
+    <xs:attribute name="employeeId" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="primaryEmployment" type="xs:boolean"
+      default="false"></xs:attribute>
+    <xs:attribute name="active" type="xs:boolean" default="true"></xs:attribute>
+    <xs:attribute name="default" type="xs:boolean" default="false"></xs:attribute>
+  </xs:complexType>
 
-	<xs:complexType name="AddressType">
-		<xs:attribute name="addressType" type="xs:string"></xs:attribute>
-		<xs:attribute name="addressLine1" type="xs:string"></xs:attribute>
-		<xs:attribute name="addressLine2" type="xs:string"></xs:attribute>
-		<xs:attribute name="addressLine3" type="xs:string"></xs:attribute>
-		<xs:attribute name="city" type="xs:string"></xs:attribute>
-		<xs:attribute name="stateOrProvince" type="xs:string"></xs:attribute>
-		<xs:attribute name="postalCode" type="xs:string"></xs:attribute>
-		<xs:attribute name="country" type="xs:string"></xs:attribute>
-		<xs:attribute name="default" type="xs:boolean" default="false"></xs:attribute>
-		<xs:attribute name="active" type="xs:boolean" default="false"></xs:attribute>
-	</xs:complexType>
+  <xs:complexType name="AddressType">
+    <xs:attribute name="addressType" type="xs:string"></xs:attribute>
+    <xs:attribute name="addressLine1" type="xs:string"></xs:attribute>
+    <xs:attribute name="addressLine2" type="xs:string"></xs:attribute>
+    <xs:attribute name="addressLine3" type="xs:string"></xs:attribute>
+    <xs:attribute name="city" type="xs:string"></xs:attribute>
+    <xs:attribute name="stateOrProvince" type="xs:string"></xs:attribute>
+    <xs:attribute name="postalCode" type="xs:string"></xs:attribute>
+    <xs:attribute name="country" type="xs:string"></xs:attribute>
+    <xs:attribute name="default" type="xs:boolean" default="false"></xs:attribute>
+    <xs:attribute name="active" type="xs:boolean" default="false"></xs:attribute>
+  </xs:complexType>
 
-	<xs:complexType name="NameType">
-		<xs:attribute name="nameCode" type="xs:string" use="required"></xs:attribute>
-		<xs:attribute name="prefix" type="xs:string"></xs:attribute>
-		<xs:attribute name="firstName" type="xs:string" use="required"></xs:attribute>
-		<xs:attribute name="lastName" type="xs:string" use="required"></xs:attribute>
-		<xs:attribute name="suffix" type="xs:string"></xs:attribute>
-		<xs:attribute name="default" type="xs:boolean" default="false"></xs:attribute>
-		<xs:attribute name="active" type="xs:boolean" default="false"></xs:attribute>
-	</xs:complexType>
+  <xs:complexType name="NameType">
+    <xs:attribute name="nameCode" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="prefix" type="xs:string"></xs:attribute>
+    <xs:attribute name="firstName" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="lastName" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="suffix" type="xs:string"></xs:attribute>
+    <xs:attribute name="default" type="xs:boolean" default="false"></xs:attribute>
+    <xs:attribute name="active" type="xs:boolean" default="false"></xs:attribute>
+  </xs:complexType>
 
-	<xs:complexType name="PhoneType">
-		<xs:attribute name="phoneType" type="xs:string"></xs:attribute>
-		<xs:attribute name="phoneNumber" type="xs:string"></xs:attribute>
-		<xs:attribute name="extension" type="xs:string"></xs:attribute>
-		<xs:attribute name="country" type="xs:string"></xs:attribute>
-		<xs:attribute name="default" type="xs:boolean" default="false"></xs:attribute>
-		<xs:attribute name="active" type="xs:boolean" default="false"></xs:attribute>
-	</xs:complexType>
+  <xs:complexType name="PhoneType">
+    <xs:attribute name="phoneType" type="xs:string"></xs:attribute>
+    <xs:attribute name="phoneNumber" type="xs:string"></xs:attribute>
+    <xs:attribute name="extension" type="xs:string"></xs:attribute>
+    <xs:attribute name="country" type="xs:string"></xs:attribute>
+    <xs:attribute name="default" type="xs:boolean" default="false"></xs:attribute>
+    <xs:attribute name="active" type="xs:boolean" default="false"></xs:attribute>
+  </xs:complexType>
 
-	<xs:complexType name="EmailType">
-		<xs:attribute name="emailType" type="xs:string"></xs:attribute>
-		<xs:attribute name="emailAddress" type="xs:string"></xs:attribute>
-		<xs:attribute name="default" type="xs:boolean" default="false"></xs:attribute>
-		<xs:attribute name="active" type="xs:boolean" default="false"></xs:attribute>
-	</xs:complexType>
+  <xs:complexType name="EmailType">
+    <xs:attribute name="emailType" type="xs:string"></xs:attribute>
+    <xs:attribute name="emailAddress" type="xs:string"></xs:attribute>
+    <xs:attribute name="default" type="xs:boolean" default="false"></xs:attribute>
+    <xs:attribute name="active" type="xs:boolean" default="false"></xs:attribute>
+  </xs:complexType>
 
-	<xs:complexType name="KCExtendedAttributesType">
-		<xs:attribute name="country" type="xs:string"></xs:attribute>
-		<xs:attribute name="ageByFiscalYear" type="xs:int"></xs:attribute>
-		<xs:attribute name="race" type="xs:string"></xs:attribute>
-		<xs:attribute name="educationLevel" type="xs:string"></xs:attribute>
-		<xs:attribute name="degree" type="xs:string"></xs:attribute>
-		<xs:attribute name="major" type="xs:string"></xs:attribute>
-		<xs:attribute name="handicapped" type="xs:boolean"></xs:attribute>
-		<xs:attribute name="handicapType" type="xs:string"></xs:attribute>
-		<xs:attribute name="veteran" type="xs:boolean"></xs:attribute>
-		<xs:attribute name="veteranType" type="xs:string"></xs:attribute>
-		<xs:attribute name="visa" type="xs:boolean"></xs:attribute>
-		<xs:attribute name="visaType" type="xs:string"></xs:attribute>
-		<xs:attribute name="visaCode" type="xs:string"></xs:attribute>
-		<xs:attribute name="visaRenewalDate" type="xs:dateTime"></xs:attribute>
-		<xs:attribute name="officeLocation" type="xs:string"></xs:attribute>
-		<xs:attribute name="secondaryOfficeLocation" type="xs:string"></xs:attribute>
-		<xs:attribute name="school" type="xs:string"></xs:attribute>
-		<xs:attribute name="yearGraduated" type="xs:string"></xs:attribute>
-		<xs:attribute name="directoryDepartment" type="xs:string"></xs:attribute>
-		<xs:attribute name="vacationAccrual" type="xs:boolean"></xs:attribute>
-		<xs:attribute name="onSabbatical" type="xs:boolean"></xs:attribute>
-		<xs:attribute name="idProvided" type="xs:string"></xs:attribute>
-		<xs:attribute name="idVerified" type="xs:string"></xs:attribute>
-		<xs:attribute name="citizenshipType" type="xs:int"></xs:attribute>
-		<xs:attribute name="multiCampusPrincipalId" type="xs:string"></xs:attribute>
-		<xs:attribute name="multiCampusPrincipalName" type="xs:string"></xs:attribute>
-		<xs:attribute name="salaryAnniversaryDate" type="xs:date"></xs:attribute>
-	</xs:complexType>
+  <xs:complexType name="KCExtendedAttributesType">
+    <xs:attribute name="country" type="xs:string"></xs:attribute>
+    <xs:attribute name="ageByFiscalYear" type="xs:int"></xs:attribute>
+    <xs:attribute name="race" type="xs:string"></xs:attribute>
+    <xs:attribute name="educationLevel" type="xs:string"></xs:attribute>
+    <xs:attribute name="degree" type="xs:string"></xs:attribute>
+    <xs:attribute name="major" type="xs:string"></xs:attribute>
+    <xs:attribute name="handicapped" type="xs:boolean"></xs:attribute>
+    <xs:attribute name="handicapType" type="xs:string"></xs:attribute>
+    <xs:attribute name="veteran" type="xs:boolean"></xs:attribute>
+    <xs:attribute name="veteranType" type="xs:string"></xs:attribute>
+    <xs:attribute name="visa" type="xs:boolean"></xs:attribute>
+    <xs:attribute name="visaType" type="xs:string"></xs:attribute>
+    <xs:attribute name="visaCode" type="xs:string"></xs:attribute>
+    <xs:attribute name="visaRenewalDate" type="xs:dateTime"></xs:attribute>
+    <xs:attribute name="officeLocation" type="xs:string"></xs:attribute>
+    <xs:attribute name="secondaryOfficeLocation" type="xs:string"></xs:attribute>
+    <xs:attribute name="school" type="xs:string"></xs:attribute>
+    <xs:attribute name="yearGraduated" type="xs:string"></xs:attribute>
+    <xs:attribute name="directoryDepartment" type="xs:string"></xs:attribute>
+    <xs:attribute name="vacationAccrual" type="xs:boolean"></xs:attribute>
+    <xs:attribute name="onSabbatical" type="xs:boolean"></xs:attribute>
+    <xs:attribute name="idProvided" type="xs:string"></xs:attribute>
+    <xs:attribute name="idVerified" type="xs:string"></xs:attribute>
+    <xs:attribute name="citizenshipType" type="xs:int"></xs:attribute>
+    <xs:attribute name="multiCampusPrincipalId" type="xs:string"></xs:attribute>
+    <xs:attribute name="multiCampusPrincipalName" type="xs:string"></xs:attribute>
+    <xs:attribute name="salaryAnniversaryDate" type="xs:date"></xs:attribute>
+  </xs:complexType>
 
-	<xs:complexType name="DegreeDataType">
-		<xs:attribute name="degree" type="xs:string"></xs:attribute>
-		<xs:attribute name="degreeType" type="xs:string"></xs:attribute>
-		<xs:attribute name="graduationYear" type="xs:string"></xs:attribute>
-		<xs:attribute name="fieldOfStudy" type="xs:string"></xs:attribute>
-		<xs:attribute name="specialization" type="xs:string"></xs:attribute>
-		<xs:attribute name="school" type="xs:string"></xs:attribute>
-		<xs:attribute name="schoolId" type="xs:string"></xs:attribute>
-		<xs:attribute name="schoolIdCode" type="xs:string"></xs:attribute>
-	</xs:complexType>
+  <xs:complexType name="DegreeDataType">
+    <xs:attribute name="degree" type="xs:string"></xs:attribute>
+    <xs:attribute name="degreeType" type="xs:string"></xs:attribute>
+    <xs:attribute name="graduationYear" type="xs:string"></xs:attribute>
+    <xs:attribute name="fieldOfStudy" type="xs:string"></xs:attribute>
+    <xs:attribute name="specialization" type="xs:string"></xs:attribute>
+    <xs:attribute name="school" type="xs:string"></xs:attribute>
+    <xs:attribute name="schoolId" type="xs:string"></xs:attribute>
+    <xs:attribute name="schoolIdCode" type="xs:string"></xs:attribute>
+  </xs:complexType>
 
-	<xs:complexType name="AppointmentDataType">
-		<xs:attribute name="unit" type="xs:string"></xs:attribute>
-		<xs:attribute name="jobCode" type="xs:string"></xs:attribute>
-		<xs:attribute name="appointmentType" type="xs:string"></xs:attribute>
-		<xs:attribute name="salary" type="xs:float"></xs:attribute>
-		<xs:attribute name="startDate" type="xs:date"></xs:attribute>
-		<xs:attribute name="endDate" type="xs:date"></xs:attribute>
-		<xs:attribute name="jobTitle" type="xs:string"></xs:attribute>
-		<xs:attribute name="preferedJobTitle" type="xs:string"></xs:attribute>
-	</xs:complexType>
+  <xs:complexType name="AppointmentDataType">
+    <xs:attribute name="unit" type="xs:string"></xs:attribute>
+    <xs:attribute name="jobCode" type="xs:string"></xs:attribute>
+    <xs:attribute name="appointmentType" type="xs:string"></xs:attribute>
+    <xs:attribute name="salary" type="xs:float"></xs:attribute>
+    <xs:attribute name="startDate" type="xs:date"></xs:attribute>
+    <xs:attribute name="endDate" type="xs:date"></xs:attribute>
+    <xs:attribute name="jobTitle" type="xs:string"></xs:attribute>
+    <xs:attribute name="preferedJobTitle" type="xs:string"></xs:attribute>
+  </xs:complexType>
 
 </xs:schema>

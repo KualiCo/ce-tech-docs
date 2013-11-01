@@ -29,7 +29,7 @@
       <div class="inner clearfix">
         <section id="main-content">
           <h2>
-<a name="human-resources-data-provisioning-service" class="anchor" href="#human-resources-data-provisioning-service"><span class="octicon octicon-link"></span></a>Human Resources Data Provisioning Service</h2>
+<a name="human-resources-provisioning-service" class="anchor" href="#human-resources-provisioning-service"><span class="octicon octicon-link"></span></a>Human Resources Provisioning Service</h2>
 
 <ol>
 <li> HR data will be sent to CE via a REST interface. The URL will be
@@ -49,6 +49,9 @@ is a valid HR manifest.</p></li>
 from your HR system. All users included in the manifest will be either added
 or updated as appropriate. Existing users in CE that are <em>not</em> in the
 manifest will be disabled.</p></li>
+<li><p>Detailed output from the REST service will generate an HTML report.
+In addition, it will also return an appropriate HTTP status code
+(i.e. <code>500</code> if there was an error; <code>200</code> if all went well).</p></li>
 </ol><h2>
 <a name="xml-schema-versioning" class="anchor" href="#xml-schema-versioning"><span class="octicon octicon-link"></span></a>XML Schema Versioning</h2>
 

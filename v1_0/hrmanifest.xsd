@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<xs:schema  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     targetNamespace="https://github.com/rSmart/ce-tech-docs/tree/master/v1_0"
+               xmlns="https://github.com/rSmart/ce-tech-docs/tree/master/v1_0"
+             version="1.0"
   elementFormDefault="qualified">
 
   <xs:element name="hrmanifest">
@@ -13,6 +16,7 @@
           </xs:complexType>
         </xs:element>
       </xs:sequence>
+      <xs:attribute name="schemaVersion" type="xs:decimal" use="required"/>
       <xs:attribute name="submitterId" type="xs:string"
         use="required"></xs:attribute>
       <xs:attribute name="transactionId" type="xs:string"

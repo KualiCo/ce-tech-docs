@@ -18,5 +18,29 @@
     or updated as appropriate. Existing users in CE that are *not* in the
     manifest will be disabled.
 
-[hrmanifest.xsd]:    https://github.com/rSmart/CE-tech-docs/blob/master/hrmanifest.xsd
-[exampleImport.xml]: https://github.com/rSmart/CE-tech-docs/blob/master/exampleImport.xml
+## XML Schema Versioning
+1.  Version numbers will be recorded using both major and minor numbers:
+
+    ```
+      <schema version="1.0"
+        targetNamespace="https://github.com/rSmart/ce-tech-docs/tree/master/v1_0">
+    ```
+
+2.  When building your HR manifest XML, be sure to indicate which version of the
+    schema your data is compatible with:
+
+    ```
+      <hrmanifest schemaVersion="1.0">
+    ```
+
+3.  Backwards compatibility will be maintained within the same *major* version number.
+    When backwards compatibility is not possible, then the major version will be
+    incremented and the targetNamespace will also change.
+
+    ```
+      <schema version="2.0"
+        targetNamespace="https://github.com/rSmart/ce-tech-docs/tree/master/v2_0">
+    ```
+
+[hrmanifest.xsd]:    https://github.com/rSmart/ce-tech-docs/blob/master/v1_0/hrmanifest.xsd
+[exampleImport.xml]: https://github.com/rSmart/ce-tech-docs/blob/master/v1_0/exampleImport.xml

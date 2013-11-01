@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hrmanifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:noNamespaceSchemaLocation="hrmanifest.xsd"
+   xsi:schemaLocation="https://github.com/rSmart/ce-tech-docs/tree/master/v1_0
+                       https://raw.github.com/rSmart/ce-tech-docs/master/v1_0/hrmanifest.xsd"
+                xmlns="https://github.com/rSmart/ce-tech-docs/tree/master/v1_0"
+   schemaVersion="1.0"
    submitterId="foo"
    transactionId="00001"
    reportDate="2013-05-20T13:03:00.0"

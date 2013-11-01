@@ -34,7 +34,7 @@
       </addresses>
       <names>
         <name nameCode="PRM"
-          prefix="Mr."
+          prefix="Mr"
           firstName="Jonathon"
           lastName="Doe"
           default="true"

@@ -107,9 +107,9 @@
     <!-- Current status of this Faculty or Staff affiliation:
       A = Active; D = Deceased; L = On Non-Pay Leave; N = Status Not Yet Processed;
       P = Processing; R = Retired; S = Sabbatical Leave; T = Terminated; -->
-    <xs:attribute name="employeeStatus" type="string1Type" use="required"/>
+    <xs:attribute name="employeeStatus" type="employeeStatus" use="required"/>
     <!-- Type of employment: N = Non-Professional; O = Other; P = Professional; -->
-    <xs:attribute name="employeeType" type="string1Type" use="required"/>
+    <xs:attribute name="employeeType" type="employeeType" use="required"/>
     <!-- The employee's base salary -->
     <xs:attribute name="baseSalaryAmount" type="xs:float" use="required"/>
     <!-- The employee's primary department -->
@@ -127,7 +127,7 @@
 
   <xs:complexType name="AddressType">
     <!-- HM = Home; OTH = Other; WRK = Work -->
-    <xs:attribute name="addressType" type="string3Type"/>
+    <xs:attribute name="addressType" type="addressType"/>
     <xs:attribute name="addressLine1" type="xs:string"/>
     <xs:attribute name="addressLine2" type="xs:string"/>
     <xs:attribute name="addressLine3" type="xs:string"/>
@@ -143,13 +143,13 @@
 
   <xs:complexType name="NameType">
     <!-- OTH = Other; PRFR = Preferred; PRM = Primary -->
-    <xs:attribute name="nameCode" type="string3Type" use="required"/>
+    <xs:attribute name="nameCode" type="nameCode" use="required"/>
     <!-- Ms;Mrs;Mr;Dr -->
-    <xs:attribute name="prefix" type="string3Type"/>
+    <xs:attribute name="prefix" type="prefix"/>
     <xs:attribute name="firstName" type="xs:string" use="required"/>
     <xs:attribute name="lastName" type="xs:string" use="required"/>
     <!-- Jr;Sr;Mr;Md -->
-    <xs:attribute name="suffix" type="string2Type"/>
+    <xs:attribute name="suffix" type="suffix"/>
     <!-- Only one record can be marked as the default. -->
     <xs:attribute name="default" type="xs:boolean" default="false"/>
     <!-- Only active records are visible in the application -->
@@ -158,7 +158,7 @@
 
   <xs:complexType name="PhoneType">
     <!-- FAX = Facsimile; HM = Home; MBL = Mobile; OTH = Other; WRK = Work -->
-    <xs:attribute name="phoneType" type="string3Type"/>
+    <xs:attribute name="phoneType" type="phoneType"/>
     <xs:attribute name="phoneNumber" type="xs:string"/>
     <xs:attribute name="extension" type="xs:string"/>
     <xs:attribute name="country" type="xs:string"/>
@@ -170,7 +170,7 @@
 
   <xs:complexType name="EmailType">
     <!-- HM = Home; OTH = Other; WRK = Work -->
-    <xs:attribute name="emailType" type="string3Type"/>
+    <xs:attribute name="emailType" type="emailType"/>
     <xs:attribute name="emailAddress" type="xs:string"/>
     <!-- Only one record can be marked as the default. -->
     <xs:attribute name="default" type="xs:boolean" default="false"/>
@@ -288,21 +288,68 @@
     <xs:attribute name="preferedJobTitle" type="xs:string"/>
   </xs:complexType>
 
-  <xs:simpleType name="string1Type">
+  <xs:simpleType name="employeeStatus">
+    <!-- A = Active; D = Deceased; L = On Non-Pay Leave; N = Status Not Yet Processed;
+      P = Processing; R = Retired; S = Sabbatical Leave; T = Terminated; -->
     <xs:restriction base="xs:string">
       <xs:maxLength value="1"/>
+      <xs:pattern value="A|D|L|N|P|R|S|T"/>
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="string2Type">
+  <xs:simpleType name="employeeType">
+    <!-- Type of employment: N = Non-Professional; O = Other; P = Professional; -->
     <xs:restriction base="xs:string">
-      <xs:maxLength value="2"/>
+      <xs:maxLength value="1"/>
+      <xs:pattern value="N|O|P"/>
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="string3Type">
+  <xs:simpleType name="addressType">
+    <!-- HM = Home; OTH = Other; WRK = Work -->
     <xs:restriction base="xs:string">
       <xs:maxLength value="3"/>
+      <xs:pattern value="HM|OTH|WRK"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="nameCode">
+    <!-- OTH = Other; PRFR = Preferred; PRM = Primary -->
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4"/>
+      <xs:pattern value="OTH|PRFR|PRM"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="prefix">
+    <!-- Ms;Mrs;Mr;Dr -->
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2"/>
+      <xs:pattern value="Ms|Mrs|Mr|Dr"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="suffix">
+    <!-- Jr;Sr;Mr;Md -->
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2"/>
+      <xs:pattern value="Jr|Sr|Mr|Md"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="phoneType">
+    <!-- FAX = Facsimile; HM = Home; MBL = Mobile; OTH = Other; WRK = Work -->
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
+      <xs:pattern value="FAX|HM|MBL|OTH|WRK"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="emailType">
+    <!-- HM = Home; OTH = Other; WRK = Work -->
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
+      <xs:pattern value="HM|OTH|WRK"/>
     </xs:restriction>
   </xs:simpleType>
 

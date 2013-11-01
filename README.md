@@ -17,6 +17,9 @@
     from your HR system. All users included in the manifest will be either added
     or updated as appropriate. Existing users in CE that are *not* in the
     manifest will be disabled.
+6.  Detailed output from the REST service will generate an HTML report.
+    In addition, it will also return an appropriate HTTP status code
+    (i.e. `500` if there was an error; `200` if all went well).
 
 ## XML Schema Versioning
 

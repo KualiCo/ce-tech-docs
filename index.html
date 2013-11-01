@@ -32,23 +32,50 @@
 <a name="human-resources-data-import-service" class="anchor" href="#human-resources-data-import-service"><span class="octicon octicon-link"></span></a>Human Resources Data Import Service</h2>
 
 <ol>
-<li>HR data will be sent to Cloud Express via a REST interface. The URL will be
+<li> HR data will be sent to CE via a REST interface. The URL will be
 provided by your project manager during implementation.</li>
 <li>
 <p>To import a data file, the customer will perform a multi-part file upload (HTTP POST),
-of an XML file to the URL: <code>/import</code>. For example:</p>
+of an XML file. For example:</p>
 
-<pre><code>curl -F file=@exampleImport.xml https://final.url.com/hr/import
+<pre><code>  curl -F file=@hrExampleImport.xml https://final.url.com/hr/import
 </code></pre>
 </li>
-<li><p>The format of the XML file is defined by the schema: <a href="https://github.com/rSmart/CE-tech-docs/blob/master/hrmanifest.xsd">hrmanifest.xsd</a>.
+<li><p>The format of the XML file is defined by the schema: <a href="https://github.com/rSmart/ce-tech-docs/blob/master/v1_0/hrmanifest.xsd">hrmanifest.xsd</a>.
 The schema will be used to validate the XML file upon upload to ensure it
 is a valid HR manifest.</p></li>
-<li><p>A sample HR manifest XML file is provided for reference: <a href="https://github.com/rSmart/CE-tech-docs/blob/master/exampleImport.xml">exampleImport.xml</a>.</p></li>
+<li><p>A sample HR manifest XML file is provided for reference: <a href="https://github.com/rSmart/ce-tech-docs/blob/master/v1_0/hrExampleImport.xml">hrExampleImport.xml</a>.</p></li>
 <li><p>The service expects that you will be sending a full dump of all active users
 from your HR system. All users included in the manifest will be either added
 or updated as appropriate. Existing users in CE that are <em>not</em> in the
 manifest will be disabled.</p></li>
+</ol><h2>
+<a name="xml-schema-versioning" class="anchor" href="#xml-schema-versioning"><span class="octicon octicon-link"></span></a>XML Schema Versioning</h2>
+
+<ol>
+<li>
+<p>Version numbers will be recorded using both major and minor numbers:</p>
+
+<pre><code>  &lt;schema version="1.0"
+    targetNamespace="https://github.com/rSmart/ce-tech-docs/tree/master/v1_0"&gt;
+</code></pre>
+</li>
+<li>
+<p>When building your HR manifest XML, be sure to indicate which version of the
+schema your data is compatible with:</p>
+
+<pre><code>  &lt;hrmanifest schemaVersion="1.0"&gt;
+</code></pre>
+</li>
+<li>
+<p>Backwards compatibility will be maintained within the same <em>major</em> version number.
+When backwards compatibility is not possible, then the major version will be
+incremented and the targetNamespace will also change. For example:</p>
+
+<pre><code>  &lt;schema version="2.0"
+    targetNamespace="https://github.com/rSmart/ce-tech-docs/tree/master/v2_0"&gt;
+</code></pre>
+</li>
 </ol>
         </section>
 

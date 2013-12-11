@@ -179,7 +179,7 @@
   </xs:complexType>
 
   <xs:complexType name="KCExtendedAttributesType">
-    <xs:attribute name="country" type="xs:string"/>
+    <xs:attribute name="county" type="xs:string"/>
     <xs:attribute name="ageByFiscalYear" type="xs:int"/>
     <xs:attribute name="race" type="xs:string"/>
     <xs:attribute name="educationLevel" type="xs:string"/>

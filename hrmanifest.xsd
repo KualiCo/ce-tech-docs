@@ -212,7 +212,6 @@
   </xs:complexType>
 
   <xs:complexType name="DegreeDataType">
-    <!-- TODO verify these valid values (mismatch from example XML) -->
     <!--
     +=============+===================================+
     | DEGREE_CODE | DESCRIPTION                       |
@@ -269,9 +268,9 @@
     | UKNW        | No Degree information specified   |
     +=============+===================================+
     -->
-    <xs:attribute name="degreeType" type="xs:string"/>
-    <xs:attribute name="degree" type="xs:string"/>
-    <xs:attribute name="graduationYear" type="xs:string"/>
+    <xs:attribute name="degreeCode" type="xs:string" use="required"/>
+    <xs:attribute name="degree" type="xs:string" use="required"/>
+    <xs:attribute name="graduationYear" type="xs:int" use="required"/>
     <xs:attribute name="fieldOfStudy" type="xs:string"/>
     <xs:attribute name="specialization" type="xs:string"/>
     <xs:attribute name="school" type="xs:string"/>

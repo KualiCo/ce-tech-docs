@@ -89,7 +89,7 @@
         salaryAnniversaryDate="2010-01-01"/>
       <degrees>
         <degree degree="PhD"
-          degreeType="GRAD"
+          degreeCode="DD"
           graduationYear="1983"
           fieldOfStudy="Mathematics"
           specialization="non-linear algebra"

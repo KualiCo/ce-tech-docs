@@ -147,6 +147,7 @@
     <!-- Ms;Mrs;Mr;Dr -->
     <xs:attribute name="prefix" type="prefix"/>
     <xs:attribute name="firstName" type="xs:string" use="required"/>
+    <xs:attribute name="middleName" type="xs:string"/>
     <xs:attribute name="lastName" type="xs:string" use="required"/>
     <!-- Jr;Sr;Mr;Md -->
     <xs:attribute name="suffix" type="suffix"/>

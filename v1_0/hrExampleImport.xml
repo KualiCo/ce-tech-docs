@@ -36,6 +36,7 @@
         <name nameCode="PRM"
           prefix="Mr"
           firstName="Jonathon"
+          middleName="R"
           lastName="Doe"
           default="true"
           active="true" />

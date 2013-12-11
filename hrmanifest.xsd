@@ -196,7 +196,7 @@
     <xs:attribute name="officeLocation" type="xs:string"/>
     <xs:attribute name="secondaryOfficeLocation" type="xs:string"/>
     <xs:attribute name="school" type="xs:string"/>
-    <xs:attribute name="yearGraduated" type="xs:string"/>
+    <xs:attribute name="yearGraduated" type="xs:int"/>
     <xs:attribute name="directoryDepartment" type="xs:string"/>
     <xs:attribute name="directoryTitle" type="xs:string"/>
     <xs:attribute name="primaryTitle" type="xs:string"/>

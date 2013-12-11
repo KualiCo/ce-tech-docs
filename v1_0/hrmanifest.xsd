@@ -127,14 +127,14 @@
 
   <xs:complexType name="AddressType">
     <!-- HM = Home; OTH = Other; WRK = Work -->
-    <xs:attribute name="addressType" type="addressType"/>
-    <xs:attribute name="addressLine1" type="xs:string"/>
+    <xs:attribute name="addressTypeCode" type="addressTypeCode" use="required"/>
+    <xs:attribute name="addressLine1" type="xs:string" use="required"/>
     <xs:attribute name="addressLine2" type="xs:string"/>
     <xs:attribute name="addressLine3" type="xs:string"/>
-    <xs:attribute name="city" type="xs:string"/>
-    <xs:attribute name="stateOrProvince" type="xs:string"/>
-    <xs:attribute name="postalCode" type="xs:string"/>
-    <xs:attribute name="country" type="xs:string"/>
+    <xs:attribute name="city" type="xs:string" use="required"/>
+    <xs:attribute name="stateOrProvince" type="xs:string" use="required"/>
+    <xs:attribute name="postalCode" type="xs:string" use="required"/>
+    <xs:attribute name="country" type="xs:string" use="required"/>
     <!-- Only one record can be marked as the default. -->
     <xs:attribute name="default" type="xs:boolean" default="false"/>
     <!-- Only active records are visible in the application -->
@@ -307,7 +307,7 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="addressType">
+  <xs:simpleType name="addressTypeCode">
     <!-- HM = Home; OTH = Other; WRK = Work -->
     <xs:restriction base="xs:string">
       <xs:maxLength value="3"/>

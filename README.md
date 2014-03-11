@@ -2,24 +2,31 @@
 
 1.  HR data will be sent to CE via a REST interface. The URL will be
     provided by your project manager during implementation.
-2.  To import a data file, the customer will perform a multi-part file upload (HTTP POST),
-    of an XML file. For example:
+2.  To import a data file, the customer will perform a multi-part file upload (HTTP POST), of an XML file. For example:
 
     ```
       curl -F file=@hrExampleImport.xml https://final.url.com/hr/import
     ```
 
-3.  The format of the XML file is defined by the schema: [hrmanifest.xsd][hrmanifest.xsd].
+3.  The format of the XML file is defined by the schema: [hrimport.xsd][hrimport.xsd].
     The schema will be used to validate the XML file upon upload to ensure it
     is a valid HR manifest.
 4.  A sample HR manifest XML file is provided for reference: [hrExampleImport.xml][hrExampleImport.xml].
-5.  The service expects that you will be sending a full dump of all active users
-    from your HR system. All users included in the manifest will be either added
-    or updated as appropriate. Existing users in CE that are *not* in the
-    manifest will be disabled.
-6.  Detailed output from the REST service will generate an HTML report.
-    In addition, it will also return an appropriate HTTP status code
-    (i.e. `500` if there was an error; `200` if all went well).
+5.  The service expects that you will be sending a full dump of ALL active users
+    from your HR system. Users will be treated differently based on their current status in the system:
+    * New users will be created. The record for each new user will be validated to ensure all required fields are provided.
+    * Existing users who are in the import will be updated. Each user record contains sub-records for names, phones, addresses, emails, degrees, and appointments. If these sub-records are present in the import the system will be updated to match. If these sub-records are not present in the import no change will be made to these values in the system. If these sub-records are present but empty all sub-records for that type will be deleted (eg. an empty <degrees/> sub-record will remove all degrees for the person within the system).
+    * Existing users who are omitted from the import will be disabled in the system.
+6.  The import will run asynchronously. If the import is able to start successfully the HTTP POST will return with a status code of 200. The import will continue to process on the server.
+7.  Only one import can run on the server at a time. If an import is in process when the HTTP POST request is made the new import will not start and a status code of 400 will be returned.
+8.  Status of the current import can be checked with the command:
+    ```
+      curl -F file=@hrExampleImport.xml https://final.url.com/hr/import/status/{id}
+    ```
+9.  The current import can be aborted with the command:
+    ```
+      curl -F file=@hrExampleImport.xml https://final.url.com/hr/import/abort/{id}
+    ```
 
 ## XML Schema Versioning
 

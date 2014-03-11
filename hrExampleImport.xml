@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hrmanifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<hrimport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="https://github.com/rSmart/ce-tech-docs/tree/master/v1_0
-                       https://raw.github.com/rSmart/ce-tech-docs/master/v1_0/hrmanifest.xsd"
+                       https://raw.github.com/rSmart/ce-tech-docs/master/v1_0/hrimport.xsd"
                 xmlns="https://github.com/rSmart/ce-tech-docs/tree/master/v1_0"
    schemaVersion="1.0"
    reportDate="2013-05-20T13:03:00"
@@ -11,15 +11,15 @@
       <affiliations>
         <affiliation affiliationType="FCLTY"
           campus="MN"
-          employeeStatus="A"
-          employeeType="P"
-          baseSalaryAmount="50180"
-          primaryDepartment="MATH"
-          employeeId="092001234"
-          primaryEmployment="true"
           default="true"
-          active="true"
-        />
+          active="true">
+          <employment employeeStatus="A"
+            employeeType="P"
+            baseSalaryAmount="50180"
+            primaryDepartment="MATH"
+            employeeId="092001234"
+            primaryEmployment="true"/>
+        <affiliation/>
       </affiliations>
       <addresses>
         <address addressType="HM"
@@ -108,4 +108,4 @@
       </appointments>
     </record>
   </records>
-</hrmanifest>
+</hrimport>

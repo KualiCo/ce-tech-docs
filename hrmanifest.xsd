@@ -5,7 +5,7 @@
              version="1.0"
   elementFormDefault="qualified">
 
-  <xs:element name="hrimport">
+  <xs:element name="hrmanifest">
     <xs:complexType>
       <xs:sequence>
         <xs:element name="records">
@@ -285,7 +285,7 @@
     -->
     <xs:attribute name="degreeCode" type="xs:string" use="required"/>
     <xs:attribute name="degree" type="xs:string" use="required"/>
-    <xs:attribute name="graduationYear" type="xs:string" use="required"/>
+    <xs:attribute name="graduationYear" type="xs:int" use="required"/>
     <xs:attribute name="fieldOfStudy" type="xs:string"/>
     <xs:attribute name="specialization" type="xs:string"/>
     <xs:attribute name="school" type="xs:string"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hrimport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<hrmanifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="https://github.com/rSmart/ce-tech-docs/tree/master/v1_0
-                       https://raw.github.com/rSmart/ce-tech-docs/master/v1_0/hrimport.xsd"
+                       https://raw.github.com/rSmart/ce-tech-docs/master/v1_0/hrmanifest.xsd"
                 xmlns="https://github.com/rSmart/ce-tech-docs/tree/master/v1_0"
    schemaVersion="1.0"
    reportDate="2013-05-20T13:03:00"
@@ -108,4 +108,4 @@
       </appointments>
     </record>
   </records>
-</hrimport>
+</hrmanifest>

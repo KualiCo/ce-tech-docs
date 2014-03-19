@@ -11,15 +11,15 @@
       <affiliations>
         <affiliation affiliationType="FCLTY"
           campus="MN"
-          employeeStatus="A"
-          employeeType="P"
-          baseSalaryAmount="50180"
-          primaryDepartment="MATH"
-          employeeId="092001234"
-          primaryEmployment="true"
           default="true"
-          active="true"
-        />
+          active="true">
+          <employment employeeStatus="A"
+            employeeType="P"
+            baseSalaryAmount="50180"
+            primaryDepartment="MATH"
+            employeeId="092001234"
+            primaryEmployment="true"/>
+        <affiliation/>
       </affiliations>
       <addresses>
         <address addressType="HM"

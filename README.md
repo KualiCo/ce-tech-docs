@@ -5,10 +5,21 @@
 2.  To import a data file, the customer will perform a multi-part file upload (HTTP POST), of an XML file. For example:
 
     ```
-      curl -F file=@hrExampleImport.xml https://final.url.com/hr/import
+      curl --user username:password --form file=@hrExampleImport.xml https://final.url.com/kc-dev/hr-import/hrimport/import
     ```
-
-3.  The format of the XML file is defined by the schema: [hrimport.xsd][hrimport.xsd].
+    The output of the command will return a little JSON response which will include the `importId`:
+    ```
+    {
+        "importId":"5702e73f-8978-42dd-aabd-78dffeba2f84",
+        "status":"PROCESSING",
+        "message":"Import is processing",
+        "startTime":"1395694542611",
+        "recordTotal":"25",
+        "processedRecords":"0",
+        "errorCount":"0"
+    }
+    ```
+3.  The format of the XML file is defined by the schema: [hrmanifest.xsd][hrmanifest.xsd].
     The schema will be used to validate the XML file upon upload to ensure it
     is a valid HR manifest.
 4.  A sample HR manifest XML file is provided for reference: [hrExampleImport.xml][hrExampleImport.xml].
@@ -21,11 +32,11 @@
 7.  Only one import can run on the server at a time. If an import is in process when the HTTP POST request is made the new import will not start and a status code of 400 will be returned.
 8.  Status of the current import can be checked with the command:
     ```
-      curl -F file=@hrExampleImport.xml https://final.url.com/hr/import/status/{id}
+      curl --user username:password https://final.url.com/kc-dev/hr-import/hrimport/import/<importId>
     ```
 9.  The current import can be aborted with the command:
     ```
-      curl -F file=@hrExampleImport.xml https://final.url.com/hr/import/abort/{id}
+      curl --user username:password -X DELETE https://final.url.com/kc-dev/hr-import/hrimport/import/<importId>
     ```
 
 ## XML Schema Versioning

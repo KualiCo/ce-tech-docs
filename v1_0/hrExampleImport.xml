@@ -22,7 +22,7 @@
         </affiliation>
       </affiliations>
       <addresses>
-        <address addressType="HM"
+        <address addressTypeCode="HM"
           addressLine1="1234 E. Main St."
           addressLine2="Apt. 8C"
           city="Minneapolis"
@@ -98,7 +98,7 @@
           schoolIdCode="UMN" />
       </degrees>
       <appointments>
-        <appointment unit="MATH"
+        <appointment unitNumber="MATH"
           jobCode="0010"
           appointmentType="APP"
           salary="50180"

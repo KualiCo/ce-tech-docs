@@ -127,7 +127,7 @@
       MED_STAFF = Medical Staff; OTH_ACADMC_GRP = Other Academic Group;
       STAFF = Staff; STDNT = Student; SUPPRT_STAFF = Support Staff; -->
     <xs:attribute name="affiliationType" type="affiliationTypeType" use="required"/>
-    <!-- Describes the principal's primary campus -->
+    <!-- select CAMPUS_CD from KRLC_CMP_T; Maintenance screen: Campus -->
     <xs:attribute name="campus" type="xs:string" use="required"/>
     <!-- Only one record can be marked as the default. -->
     <xs:attribute name="default" type="xs:boolean" default="true"/>
@@ -227,7 +227,7 @@
   </xs:complexType>
 
   <xs:complexType name="DegreeDataType">
-    <!-- select * from degree_type; Maintenance screen: Degree Type-->
+    <!-- select * from degree_type; Maintenance screen: Degree Type -->
     <xs:attribute name="degreeCode" type="xs:string" use="required"/>
     <xs:attribute name="degree" type="xs:string" use="required"/>
     <xs:attribute name="graduationYear" type="year" use="required"/>

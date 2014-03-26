@@ -84,7 +84,7 @@
       number from your HR system. -->
     <xs:attribute name="principalId" type="xs:string" use="required"/>
     <!-- The user name by which this principal is to be identified. i.e. username -->
-    <xs:attribute name="principalName" type="xs:string" use="required"/>
+    <xs:attribute name="principalName" type="principalName" use="required"/>
     <!-- Whether this user is active -->
     <xs:attribute name="active" type="xs:boolean" default="true"/>
   </xs:complexType>
@@ -327,7 +327,7 @@
 
   <xs:simpleType name="year">
     <xs:restriction base="xs:int">
-      <xs:pattern value="[0-9]{4}"/>
+      <xs:totalDigits value="4"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -393,4 +393,12 @@
       <xs:pattern value="AS|BA|BComm|BEd|BS|DA|DC|DD|DDS|DEng|DFA|DH|DHA|DMin|DPA|DSN|DVM|DVS|HS|JD|LLD|LLM|MA|MAEd|MArch|MBA|MD|MDS|MDiv|MEE|MEd|MEng|MFA|MIS|MLS|MPA|MPE|MPH|MPd|MPhil|MS|MSEd|MST|MSW|MTh|PhD|PharD|ScD|ThD|UKNW"/>
     </xs:restriction>
   </xs:simpleType>
+
+  <xs:simpleType name="principalName">
+    <!-- Must be lowercase. See: https://jira.kuali.org/browse/KULRICE-2996 -->
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-z0-9_-]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
 </xs:schema>

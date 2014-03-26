@@ -135,10 +135,6 @@
     <xs:attribute name="active" type="xs:boolean" default="true"/>
   </xs:complexType>
 
-  <xs:attributeGroup name="emplomentAttributes">
-
-  </xs:attributeGroup>
-
   <xs:complexType name="AddressType">
     <!-- HM = Home; OTH = Other; WRK = Work -->
     <xs:attribute name="addressTypeCode" type="addressTypeCode" use="required"/>
@@ -227,8 +223,7 @@
   </xs:complexType>
 
   <xs:complexType name="DegreeDataType">
-    <!-- select * from degree_type; Maintenance screen: Degree Type -->
-    <xs:attribute name="degreeCode" type="xs:string" use="required"/>
+    <xs:attribute name="degreeCode" type="degreeCode" use="required"/>
     <xs:attribute name="degree" type="xs:string" use="required"/>
     <xs:attribute name="graduationYear" type="year" use="required"/>
     <xs:attribute name="fieldOfStudy" type="xs:string"/>
@@ -332,7 +327,70 @@
 
   <xs:simpleType name="year">
     <xs:restriction base="xs:int">
-      <xs:pattern value="[0-9]{2,4}"/>
+      <xs:pattern value="[0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="degreeCode">
+    <!--
+    See: http://www.nsf.gov/pubs/policydocs/grantsgovguide309.pdf
+    +=============+===================================+
+    | DEGREE_CODE | DESCRIPTION                       |
+    +=============+===================================+
+    | AS          | Associate in Science              |
+    | BA          | Bachelor of Arts                  |
+    | BComm       | Bachelor of Commerce (Canada)     |
+    | BEd         | Bachelor of Education             |
+    | BS          | Bachelor of Science               |
+    | DA          | Doctor of Arts                    |
+    | DC          | Doctor of Chiropractics           |
+    | DD          | Doctor of Divinity                |
+    | DDS         | Doctor of Dental Science          |
+    | DEng        | Doctor of Engineering             |
+    | DFA         | Doctor of Fine Arts               |
+    | DH          | Doctor of Humanities              |
+    | DHA         | Doctor of Hospital Administration |
+    | DMin        | Doctor of Ministry                |
+    | DPA         | Doctor of Public Administration   |
+    | DSN         | Doctorate of Science, in Nursing  |
+    | DVM         | Doctor of Veterinary Medicine     |
+    | DVS         | Doctor of Veterinary Science      |
+    | HS          | High School (or GED equivalent)   |
+    | JD          | Jurum Doctor (Doctor of Laws)     |
+    | LLD         | Legum Doctor (Doctor of Laws)     |
+    | LLM         | Legum Magister (Master of Laws)   |
+    | MA          | Master of Arts                    |
+    | MAEd        | Master of Arts, in Education      |
+    | MArch       | Master of Architecture            |
+    | MBA         | Master of Business Administration |
+    | MD          | Medical Doctor                    |
+    | MDS         | Master of Medical Science         |
+    | MDiv        | Master of Divinity                |
+    | MEE         | Master of Electrical Engineering  |
+    | MEd         | Master of Education               |
+    | MEng        | Master of Engineering             |
+    | MFA         | Master of Fine Arts               |
+    | MIS         | Master of Information Systems     |
+    | MLS         | Master of Library Science         |
+    | MPA         | Master of Public Administration   |
+    | MPE         | Master of Public Education        |
+    | MPH         | Master of Public Health           |
+    | MPd         | Master of Pedagogy                |
+    | MPhil       | Master of Philosophy              |
+    | MS          | Master of Science                 |
+    | MSEd        | Master of Science, in Education   |
+    | MST         | Master of Sacred Theology         |
+    | MSW         | Master of Social Work             |
+    | MTh         | Master of Theology, in Religion   |
+    | PhD         | Doctor of Philosophy              |
+    | PharD       | Doctor of Pharmacy                |
+    | ScD         | Doctor of Science                 |
+    | ThD         | Doctor of Theology, in Religion   |
+    | UKNW        | No Degree information specified   |
+    +=============+===================================+
+    -->
+    <xs:restriction base="xs:string">
+      <xs:pattern value="AS|BA|BComm|BEd|BS|DA|DC|DD|DDS|DEng|DFA|DH|DHA|DMin|DPA|DSN|DVM|DVS|HS|JD|LLD|LLM|MA|MAEd|MArch|MBA|MD|MDS|MDiv|MEE|MEd|MEng|MFA|MIS|MLS|MPA|MPE|MPH|MPd|MPhil|MS|MSEd|MST|MSW|MTh|PhD|PharD|ScD|ThD|UKNW"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>

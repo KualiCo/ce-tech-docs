@@ -112,31 +112,31 @@
 		      <!-- Type of employment: N = Non-Professional; O = Other; P = Professional; -->
 		      <xs:attribute name="employeeType" type="employeeType" use="required"/>
 		      <!-- The employee's base salary -->
-		      <xs:attribute name="baseSalaryAmount" type="xs:float" use="required"/>
+		      <xs:attribute name="baseSalaryAmount" type="xs:float"/>
 		      <!-- The employee's primary department -->
 		      <xs:attribute name="primaryDepartment" type="xs:string" use="required"/>
 		      <!-- Employee's ID number -->
 		      <xs:attribute name="employeeId" type="xs:string" use="required"/>
 		      <!-- Boolean to indicate that this faculty or staff affiliation represents
 		            the Principal's primary job with your institution -->
-		      <xs:attribute name="primaryEmployment" type="xs:boolean" default="false"/>
+		      <xs:attribute name="primaryEmployment" type="xs:boolean" default="true"/>
 	      </xs:complexType>
 	    </xs:element>
     </xs:sequence>
     <!-- AFLT = Affiliate; FCLTY = Faculty; GRD_STDNT_STAFF = Graduate Student Staff;
       MED_STAFF = Medical Staff; OTH_ACADMC_GRP = Other Academic Group;
       STAFF = Staff; STDNT = Student; SUPPRT_STAFF = Support Staff; -->
-    <xs:attribute name="affiliationType" type="xs:string" use="required"/>
+    <xs:attribute name="affiliationType" type="affiliationTypeType" use="required"/>
     <!-- Describes the principal's primary campus -->
     <xs:attribute name="campus" type="xs:string" use="required"/>
     <!-- Only one record can be marked as the default. -->
-    <xs:attribute name="default" type="xs:boolean" default="false"/>
+    <xs:attribute name="default" type="xs:boolean" default="true"/>
     <!-- Only active records are visible in the application -->
     <xs:attribute name="active" type="xs:boolean" default="true"/>
   </xs:complexType>
-  
+
   <xs:attributeGroup name="emplomentAttributes">
-    
+
   </xs:attributeGroup>
 
   <xs:complexType name="AddressType">
@@ -148,9 +148,9 @@
     <xs:attribute name="city" type="xs:string" use="required"/>
     <xs:attribute name="stateOrProvince" type="xs:string" use="required"/>
     <xs:attribute name="postalCode" type="xs:string" use="required"/>
-    <xs:attribute name="country" type="xs:string" use="required"/>
+    <xs:attribute name="country" type="xs:string"/>
     <!-- Only one record can be marked as the default. -->
-    <xs:attribute name="default" type="xs:boolean" default="false"/>
+    <xs:attribute name="default" type="xs:boolean" default="true"/>
     <!-- Only active records are visible in the application -->
     <xs:attribute name="active" type="xs:boolean" default="true"/>
   </xs:complexType>
@@ -227,62 +227,7 @@
   </xs:complexType>
 
   <xs:complexType name="DegreeDataType">
-    <!--
-    +=============+===================================+
-    | DEGREE_CODE | DESCRIPTION                       |
-    +=============+===================================+
-    | AS          | Associate in Science              |
-    | BA          | Bachelor of Arts                  |
-    | BComm       | Bachelor of Commerce (Canada)     |
-    | BEd         | Bachelor of Education             |
-    | BS          | Bachelor of Science               |
-    | DA          | Doctor of Arts                    |
-    | DC          | Doctor of Chiropractics           |
-    | DD          | Doctor of Divinity                |
-    | DDS         | Doctor of Dental Science          |
-    | DEng        | Doctor of Engineering             |
-    | DFA         | Doctor of Fine Arts               |
-    | DH          | Doctor of Humanities              |
-    | DHA         | Doctor of Hospital Administration |
-    | DMin        | Doctor of Ministry                |
-    | DPA         | Doctor of Public Administration   |
-    | DSN         | Doctorate of Science, in Nursing  |
-    | DVM         | Doctor of Veterinary Medicine     |
-    | DVS         | Doctor of Veterinary Science      |
-    | HS          | High School (or GED equivalent)   |
-    | JD          | Jurum Doctor (Doctor of Laws)     |
-    | LLD         | Legum Doctor (Doctor of Laws)     |
-    | LLM         | Legum Magister (Master of Laws)   |
-    | MA          | Master of Arts                    |
-    | MAEd        | Master of Arts, in Education      |
-    | MArch       | Master of Architecture            |
-    | MBA         | Master of Business Administration |
-    | MD          | Medical Doctor                    |
-    | MDS         | Master of Medical Science         |
-    | MDiv        | Master of Divinity                |
-    | MEE         | Master of Electrical Engineering  |
-    | MEd         | Master of Education               |
-    | MEng        | Master of Engineering             |
-    | MFA         | Master of Fine Arts               |
-    | MIS         | Master of Information Systems     |
-    | MLS         | Master of Library Science         |
-    | MPA         | Master of Public Administration   |
-    | MPE         | Master of Public Education        |
-    | MPH         | Master of Public Health           |
-    | MPd         | Master of Pedagogy                |
-    | MPhil       | Master of Philosophy              |
-    | MS          | Master of Science                 |
-    | MSEd        | Master of Science, in Education   |
-    | MST         | Master of Sacred Theology         |
-    | MSW         | Master of Social Work             |
-    | MTh         | Master of Theology, in Religion   |
-    | PhD         | Doctor of Philosophy              |
-    | PharD       | Doctor of Pharmacy                |
-    | ScD         | Doctor of Science                 |
-    | ThD         | Doctor of Theology, in Religion   |
-    | UKNW        | No Degree information specified   |
-    +=============+===================================+
-    -->
+    <!-- select * from degree_type; Maintenance screen: Degree Type-->
     <xs:attribute name="degreeCode" type="xs:string" use="required"/>
     <xs:attribute name="degree" type="xs:string" use="required"/>
     <xs:attribute name="graduationYear" type="xs:int" use="required"/>
@@ -367,6 +312,15 @@
     <xs:restriction base="xs:string">
       <xs:maxLength value="3"/>
       <xs:pattern value="HM|OTH|WRK"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="affiliationTypeType">
+    <!-- AFLT = Affiliate; FCLTY = Faculty; GRD_STDNT_STAFF = Graduate Student Staff;
+      MED_STAFF = Medical Staff; OTH_ACADMC_GRP = Other Academic Group;
+      STAFF = Staff; STDNT = Student; SUPPRT_STAFF = Support Staff; -->
+    <xs:restriction base="xs:string">
+      <xs:pattern value="AFLT|FCLTY|GRD_STDNT_STAFF|MED_STAFF|OTH_ACADMC_GRP|STAFF|STDNT|SUPPRT_STAFF"/>
     </xs:restriction>
   </xs:simpleType>
 

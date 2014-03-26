@@ -234,7 +234,7 @@
   </xs:complexType>
 
   <xs:complexType name="AppointmentDataType">
-    <!-- TODO document valid values -->
+    <!-- select APPOINTMENT_TYPE_CODE from APPOINTMENT_TYPE; Maintenance Screen: Appointment Type -->
     <xs:attribute name="appointmentType" type="xs:string"/>
     <xs:attribute name="unitNumber" type="xs:string"/>
     <xs:attribute name="jobCode" type="xs:string"/>

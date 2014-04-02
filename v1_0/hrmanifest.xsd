@@ -282,7 +282,7 @@
     <!-- Ms;Mrs;Mr;Dr -->
     <xs:restriction base="xs:string">
       <xs:maxLength value="3"/>
-      <xs:pattern value="Ms|Mrs|Mr|Dr"/>
+      <xs:pattern value="|Ms|Mrs|Mr|Dr"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -290,7 +290,7 @@
     <!-- Jr;Sr;Mr;Md -->
     <xs:restriction base="xs:string">
       <xs:maxLength value="2"/>
-      <xs:pattern value="Jr|Sr|Mr|Md"/>
+      <xs:pattern value="|Jr|Sr|Mr|Md"/>
     </xs:restriction>
   </xs:simpleType>
 

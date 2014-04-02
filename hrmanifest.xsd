@@ -216,7 +216,7 @@
     <xs:attribute name="onSabbatical" type="xs:boolean" default="false"/>
     <xs:attribute name="idProvided" type="xs:string"/>
     <xs:attribute name="idVerified" type="xs:string"/>
-    <xs:attribute name="citizenshipType" type="xs:int" use="required"/>
+    <xs:attribute name="citizenshipType" type="citizenshipType" use="required"/>
     <xs:attribute name="multiCampusPrincipalId" type="xs:string"/>
     <xs:attribute name="multiCampusPrincipalName" type="xs:string"/>
     <xs:attribute name="salaryAnniversaryDate" type="xs:date"/>
@@ -328,6 +328,23 @@
   <xs:simpleType name="year">
     <xs:restriction base="xs:int">
       <xs:totalDigits value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--
+  +=======================+====================================+
+  | CITIZENSHIP_TYPE_CODE | DESCRIPTION                        |
+  +=======================+====================================+
+  |                     1 | US CITIZEN OR NONCITIZEN NATIONAL  |
+  |                     2 | PERMANENT RESIDENT OF US           |
+  |                     3 | NON US CITIZEN WITH TEMPORARY VISA |
+  |                     4 | PERMANENT RESIDENT OF US PENDING   |
+  +=======================+====================================+ -->
+  <xs:simpleType name="citizenshipType">
+    <xs:restriction base="xs:int">
+      <xs:totalDigits value="1"/>
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="4"/>
     </xs:restriction>
   </xs:simpleType>
 

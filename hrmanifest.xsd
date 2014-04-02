@@ -216,7 +216,7 @@
     <xs:attribute name="onSabbatical" type="xs:boolean" default="false"/>
     <xs:attribute name="idProvided" type="xs:string"/>
     <xs:attribute name="idVerified" type="xs:string"/>
-    <xs:attribute name="citizenshipType" type="xs:int"/>
+    <xs:attribute name="citizenshipType" type="xs:int" use="required"/>
     <xs:attribute name="multiCampusPrincipalId" type="xs:string"/>
     <xs:attribute name="multiCampusPrincipalName" type="xs:string"/>
     <xs:attribute name="salaryAnniversaryDate" type="xs:date"/>

@@ -80,9 +80,12 @@
         </xs:complexType>
       </xs:element>
     </xs:sequence>
-    <!-- The unique ID number identifying a principal. It's the unique alphanumeric
-      number from your HR system. -->
-    <xs:attribute name="principalId" type="xs:string" use="required"/>
+    <!-- The unique identifier for this person in the HR system of record. 
+        If left blank an ID will be generated. -->
+    <xs:attribute name="entityId" type="xs:string" use="optional"/>
+    <!-- The unique ID for this principal in the authentication system. 
+      If left blank an ID will be generated. -->
+    <xs:attribute name="principalId" type="xs:string" use="optional"/>
     <!-- The user name by which this principal is to be identified. i.e. username -->
     <xs:attribute name="principalName" type="principalName" use="required"/>
     <!-- Whether this user is active -->

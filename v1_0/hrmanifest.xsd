@@ -183,7 +183,7 @@
   <xs:complexType name="PhoneType">
     <!-- FAX = Facsimile; HM = Home; MBL = Mobile; OTH = Other; WRK = Work -->
     <xs:attribute name="phoneType" type="phoneType"/>
-    <xs:attribute name="phoneNumber" type="xs:string"/>
+    <xs:attribute name="phoneNumber" type="phoneNumber"/>
     <xs:attribute name="extension" type="xs:string"/>
     <xs:attribute name="country" type="xs:string"/>
     <!-- Only one record can be marked as the default. -->
@@ -311,6 +311,13 @@
     <xs:restriction base="xs:string">
       <xs:maxLength value="3"/>
       <xs:pattern value="FAX|HM|MBL|OTH|WRK"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="phoneNumber">
+    <!-- e.g.: 555-555-1212 format required by application validation rules -->
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{3}-\d{3}-\d{4}"/>
     </xs:restriction>
   </xs:simpleType>
 

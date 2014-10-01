@@ -7,7 +7,7 @@
    reportDate="2013-05-20T13:03:00"
    recordCount="1">
   <records>
-    <record principalId="0001" principalName="jdoe">
+    <record principalId="1234567890" principalName="jdoe">
       <affiliations>
         <affiliation affiliationType="FCLTY"
           campus="MN"
@@ -62,15 +62,15 @@
         ageByFiscalYear="52"
         race="CAUCASIAN"
         educationLevel="PHD"
-        degree="Doctor of Psychology"
+        degree="M.Sc."
         major="MATHEMATICS"
         handicapped="true"
-        handicapType="TODO Need a better handicapType example"
+        handicapType="Olfactory"
         veteran="true"
         veteranType="A"
         visa="true"
-        visaCode="TODO need a better visaCode example"
-        visaType="TODO need a better visaType example"
+        visaCode="TBD"
+        visaType="TBD"
         visaRenewalDate="2013-12-25"
         officeLocation="503 Carter Hall"
         secondaryOfficeLocation="88 Regan Hall"
@@ -98,9 +98,9 @@
           schoolIdCode="UMN" />
       </degrees>
       <appointments>
-        <appointment unitNumber="MATH"
+        <appointment unitNumber="SECED"
           jobCode="0010"
-          appointmentType="APP"
+          appointmentType="1"
           salary="50180"
           startDate="2010-01-01"
           jobTitle="Professor"

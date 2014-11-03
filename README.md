@@ -14,8 +14,8 @@
         "status":"PROCESSING",
         "message":"Import is processing",
         "startTime":"1395694542611",
-        "recordTotal":"25",
-        "processedRecords":"0",
+        "recordTotal":"33",
+        "processedRecords":"11",
         "errorCount":"0"
     }
     ```

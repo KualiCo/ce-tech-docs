@@ -11,11 +11,11 @@
     ```
     {
         "importId":"5702e73f-8978-42dd-aabd-78dffeba2f84",
-        "status":"PROCESSING",
-        "message":"Import is processing",
+        "status":"COMPLETE",
+        "message":"Import has finished",
         "startTime":"1395694542611",
         "recordTotal":"33",
-        "processedRecords":"11",
+        "processedRecords":"33",
         "errorCount":"0"
     }
     ```

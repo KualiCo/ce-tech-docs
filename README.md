@@ -41,7 +41,7 @@
 
 ## XML Schema Versioning
 
-1.  Version numbers will be recorded using both major and minor numbers:
+1.  Semantic version numbers will be recorded using both major and minor numbers:
 
     ```
       <schema version="1.0"

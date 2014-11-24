@@ -349,12 +349,13 @@
   |                     2 | PERMANENT RESIDENT OF US           |
   |                     3 | NON US CITIZEN WITH TEMPORARY VISA |
   |                     4 | PERMANENT RESIDENT OF US PENDING   |
+  |                     5 | OTHER                              |
   +=======================+====================================+ -->
   <xs:simpleType name="citizenshipType">
     <xs:restriction base="xs:int">
       <xs:totalDigits value="1"/>
       <xs:minInclusive value="1"/>
-      <xs:maxInclusive value="4"/>
+      <xs:maxInclusive value="5"/>
     </xs:restriction>
   </xs:simpleType>
 

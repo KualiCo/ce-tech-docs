@@ -45,7 +45,7 @@
 
     ```
       <schema version="1.0"
-        targetNamespace="https://github.com/rSmart/ce-tech-docs/tree/master/v1_0">
+        targetNamespace="https://github.com/KualiCo/ce-tech-docs/tree/master/v1_0">
     ```
 
 2.  When building your HR manifest XML, be sure to indicate which version of the
@@ -61,7 +61,7 @@
 
     ```
       <schema version="2.0"
-        targetNamespace="https://github.com/rSmart/ce-tech-docs/tree/master/v2_0">
+        targetNamespace="https://github.com/KualiCo/ce-tech-docs/tree/master/v2_0">
     ```
 
 4.  Note: Changes to the schema that would require a compatibility change, will
@@ -70,5 +70,5 @@
     working as long as possible. This will help minimize any impact to the
     customer as much as possible.
 
-[hrmanifest.xsd]:      https://github.com/rSmart/ce-tech-docs/blob/master/v1_0/hrmanifest.xsd
-[hrExampleImport.xml]: https://github.com/rSmart/ce-tech-docs/blob/master/v1_0/hrExampleImport.xml
+[hrmanifest.xsd]:      https://github.com/KualiCo/ce-tech-docs/blob/master/v1_0/hrmanifest.xsd
+[hrExampleImport.xml]: https://github.com/KualiCo/ce-tech-docs/blob/master/v1_0/hrExampleImport.xml

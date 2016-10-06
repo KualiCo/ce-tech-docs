@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-     targetNamespace="https://github.com/KualiCo/ce-tech-docs/tree/master/v2_1"
-               xmlns="https://github.com/KualiCo/ce-tech-docs/tree/master/v2_1"
-             version="2.1"
+     targetNamespace="https://github.com/rSmart/ce-tech-docs/tree/master/v2_0"
+               xmlns="https://github.com/rSmart/ce-tech-docs/tree/master/v2_0"
+             version="2.0"
   elementFormDefault="qualified">
 
   <xs:element name="hrmanifest">

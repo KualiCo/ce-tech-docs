@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hrmanifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="https://github.com/rSmart/ce-tech-docs/tree/master/v2_1
-                       https://raw.github.com/rSmart/ce-tech-docs/master/v2_1/hrmanifest.xsd"
-                xmlns="https://github.com/rSmart/ce-tech-docs/tree/master/v2_1"
+   xsi:schemaLocation="https://github.com/KualiCo/ce-tech-docs/tree/master/v2_1
+                       https://raw.github.com/KualiCo/ce-tech-docs/master/v2_1/hrmanifest.xsd"
+                xmlns="https://github.com/KualiCo/ce-tech-docs/tree/master/v2_1"
    schemaVersion="2.1"
    reportDate="2013-05-20T13:03:00"
    recordCount="1">

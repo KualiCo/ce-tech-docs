@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-     targetNamespace="https://github.com/rSmart/ce-tech-docs/tree/master/v2_1"
-               xmlns="https://github.com/rSmart/ce-tech-docs/tree/master/v2_1"
+     targetNamespace="https://github.com/KualiCo/ce-tech-docs/tree/master/v2_1"
+               xmlns="https://github.com/KualiCo/ce-tech-docs/tree/master/v2_1"
              version="2.1"
   elementFormDefault="qualified">
 
@@ -350,12 +350,14 @@
   |                     3 | NON US CITIZEN WITH TEMPORARY VISA |
   |                     4 | PERMANENT RESIDENT OF US PENDING   |
   |                     5 | OTHER                              |
+  |                    15 | NOT RESIDING IN THE US                   |
+  |                    16 | TEMP VISA ALSO APPLIED FOR PERM RESIDENT |
   +=======================+====================================+ -->
   <xs:simpleType name="citizenshipType">
     <xs:restriction base="xs:int">
-      <xs:totalDigits value="1"/>
+      <xs:totalDigits value="3"/>
       <xs:minInclusive value="1"/>
-      <xs:maxInclusive value="5"/>
+      <xs:maxInclusive value="999"/>
     </xs:restriction>
   </xs:simpleType>
 

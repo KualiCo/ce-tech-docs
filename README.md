@@ -70,5 +70,5 @@
     working as long as possible. This will help minimize any impact to the
     customer as much as possible.
 
-[hrmanifest.xsd]:      https://github.com/KualiCo/ce-tech-docs/blob/master/v1_0/hrmanifest.xsd
-[hrExampleImport.xml]: https://github.com/KualiCo/ce-tech-docs/blob/master/v1_0/hrExampleImport.xml
+[hrmanifest.xsd]:      https://github.com/KualiCo/ce-tech-docs/blob/master/v2_0/hrmanifest.xsd
+[hrExampleImport.xml]: https://github.com/KualiCo/ce-tech-docs/blob/master/v2_0/hrExampleImport.xml

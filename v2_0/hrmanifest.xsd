@@ -105,7 +105,7 @@
   -->
   <xs:complexType name="AffiliationType">
     <xs:sequence>
-	    <xs:element name="employment" minOccurs="1" maxOccurs="1">
+	    <xs:element name="employment" minOccurs="1" maxOccurs="5">
 	      <xs:complexType>
 		      <!-- Current status of this Faculty or Staff affiliation:
 		        A = Active; D = Deceased; L = On Non-Pay Leave; N = Status Not Yet Processed;

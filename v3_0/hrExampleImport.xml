@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hrmanifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://github.com/KualiCo/ce-tech-docs/tree/master/v3_0
+                       file:///C:/source/ce-tech-docs/v3_0/hrmanifest.xsd"
+  xmlns="https://github.com/KualiCo/ce-tech-docs/tree/master/v3_0" schemaVersion="3.0" reportDate="2013-05-20T13:03:00" recordCount="1">
+    <record principalId="0001" principalName="jdoe">
+      <affiliationType>FCLTY</affiliationType>
+      <campus>MN</campus>
+      <employeeStatus>A</employeeStatus>
+      <employeeType>P</employeeType>
+      <baseSalaryAmount>50180</baseSalaryAmount>
+      <primaryDepartment>MATH</primaryDepartment>
+      <employeeId>092001234</employeeId>
+      <addressTypeCode>HM</addressTypeCode>
+      <addressLine1>1234 E. Main St.</addressLine1>
+      <addressLine2>Apt. 8C</addressLine2>
+      <city>Minneapolis</city>
+      <stateOrProvince>MN</stateOrProvince>
+      <postalCode>34567</postalCode>
+      <country>US</country>
+      <firstName>Jonathon</firstName>
+      <middleName>R</middleName>
+      <lastName>Doe</lastName>
+      <phoneNumber>204-391-1101</phoneNumber>
+      <emailAddress>jdoe@university.edu</emailAddress>
+    </record>
+    <record principalId="0002" principalName="minimal">
+      <affiliationType>FCLTY</affiliationType>
+      <campus>MN</campus>
+      <employeeStatus>A</employeeStatus>
+      <employeeType>P</employeeType>
+      <baseSalaryAmount>50180</baseSalaryAmount>
+      <primaryDepartment>MATH</primaryDepartment>
+      <employeeId>092001234</employeeId>
+      <firstName>Jonathon</firstName>
+      <lastName>Doe</lastName>
+    </record>
+</hrmanifest>

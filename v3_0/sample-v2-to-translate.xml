@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hrmanifest xmlns="https://github.com/rSmart/ce-tech-docs/tree/master/v2_0" schemaVersion="2.0"
+  statusEmailRecipient="email-address@email.email" recordCount="20594">
+  <h:records xmlns:h="https://github.com/rSmart/ce-tech-docs/tree/master/v2_0">
+    <h:record principalId="0001" principalName="jdoe" active="true">
+      <h:affiliations>
+        <h:affiliation affiliationType="FCLTY" campus="MN" default="true" active="true">
+          <h:employment employeeStatus="A" employeeType="P" baseSalaryAmount="50180"
+            primaryDepartment="MATH" employeeId="092001234" primaryEmployment="true" />
+        </h:affiliation>
+      </h:affiliations>
+      <h:addresses>
+        <h:address addressTypeCode="HM" addressLine1="1234 E. Main St." city="Minneapolis"
+          stateOrProvince="MN" postalCode="34567" country="US" default="true" active="true" />
+      </h:addresses>
+      <h:names>
+        <h:name nameCode="PRFR" firstName="Jonathon" middleName="R" lastName="Doe" default="true"
+          active="true" />
+      </h:names>
+      <h:phones>
+        <h:phone phoneType="HM" phoneNumber="204-391-1101" default="true" active="true" />
+      </h:phones>
+      <h:emails>
+        <h:email emailType="WRK" emailAddress="jdoe@university.edu" default="true"
+          active="true" />
+      </h:emails>
+    </h:record>
+  </h:records>
+</hrmanifest>

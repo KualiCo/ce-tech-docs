@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- Copyright © 2013-2025 Kuali, Inc. - All Rights Reserved -->
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:g="https://github.com/rSmart/ce-tech-docs/tree/master/v2_0"
